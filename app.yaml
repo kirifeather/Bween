@@ -1,0 +1,28 @@
+application: kiri-bween
+version: 1
+runtime: php
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /(.+\.php)$
+  script: \1
+
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /
+  static_files: htdocs/index.htm
+  upload: /
+
+- url: /images/(.*)
+  static_files: images/\1
+  upload: images/(.*)
+
+- url: /
+  static_dir: htdocs
+
+- url: .*
+  script: main.app
+
