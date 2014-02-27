@@ -7,22 +7,23 @@ threadsafe: yes
 handlers:
 - url: /(.+\.php)$
   script: \1
-
+  secure: always
+  
 - url: /favicon\.ico
   static_files: favicon.ico
   upload: favicon\.ico
+  secure: always
 
 - url: /
   static_files: htdocs/index.htm
   upload: /
+  secure: always
 
 - url: /images/(.*)
   static_files: images/\1
   upload: images/(.*)
-
-- url: /
-  static_dir: htdocs
+  secure: always
 
 - url: .*
-  script: main.app
-
+  script: main.php
+  secure: always
