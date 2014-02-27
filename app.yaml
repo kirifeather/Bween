@@ -12,18 +12,17 @@ handlers:
 - url: /favicon\.ico
   static_files: favicon.ico
   upload: favicon\.ico
-  secure: always
 
 - url: /
   static_files: htdocs/index.htm
   upload: /
-  secure: always
 
 - url: /images/(.*)
   static_files: images/\1
   upload: images/(.*)
-  secure: always
 
-- url: .*
+- url: /htdocs/
+  static_dir: htdocs
+  
+- url: /.*
   script: main.php
-  secure: always
