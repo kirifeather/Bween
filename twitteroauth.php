@@ -191,9 +191,11 @@ class TwitterOAuth {
    * @return API results
    */
  function http($url, $method, $postfields = null) {
+ 	/*
   	if (function_exists('curl_init')) {
   		return $this->httpCurl($url, $method, $postfields);
   	}
+  	*/
   	return $this->httpNoCurl($url, $method, $postfields);
   }
   
